@@ -1,14 +1,17 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "preserve",
-    "noEmit": true,
-    "emitDeclarationOnly": false,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "es6"],
+    "module": "node16",
+    "moduleResolution": "node16",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "plugins": [
@@ -16,32 +19,18 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    },
-    "outDir": "dist",
-    "rootDir": "src",
-    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo"
+    }
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "../../apps/storefront-web/.next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
     "../../dist/apps/storefront-web/.next/types/**/*.ts",
-    "next-env.d.ts"
+    "../../libs/shared-storefront-ui/src/**/*"
   ],
-  "exclude": [
-    "out-tsc",
-    "dist",
-    "node_modules",
-    "jest.config.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.test.ts",
-    ".next",
-    "eslint.config.js",
-    "eslint.config.cjs",
-    "eslint.config.mjs"
-  ]
+  "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }
