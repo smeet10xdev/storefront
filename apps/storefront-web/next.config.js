@@ -8,7 +8,6 @@ const withTM = require('next-transpile-modules')([
   // TODO: removed from package.json
   // 'react-native-svg',
   // 'react-native-svg-web',
-  '@storefront/shared-ui',
   // 'react-native-reusables',
   // 'lucide-react-native',
 ]);
